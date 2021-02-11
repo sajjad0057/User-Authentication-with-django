@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block body_block %}
+
+{% if user.is_authenticated %}
+<h2>welcome to This Page....</h2>
+<h3>Hi {{user_basic_info.username}},</h3>
+<h4>Your Email : {{user_basic_info.email}}</h4>
+<img src="/media/{{user_more_info.profile_pic}}" alt="Image" width='200px'>
+<h5>Your FaceBook Profile : <a href="{{user_more_info.facebook_id}}">Click Here</a></h5>
+
+{% else %}
+<br>
+<hr>
+<h2>You are not login , Please login .... If you don't have an account please registering first and login</h2>
+<br>
+<hr>
+{% endif %}
+
+
+{% endblock %}
